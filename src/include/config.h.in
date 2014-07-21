@@ -1,0 +1,4 @@
+#define MajorTank_MAJOR_VERSION @MajorTank_MAJOR_VERSION@
+#define MajorTank_MINOR_VERSION @MajorTank_MINOR_VERSION@
+#define MajorTank_PATCH_VERSION @MajorTank_PATCH_VERSION@
+#define MajorTank_VERSION @MajorTank_VERSION@
