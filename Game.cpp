@@ -1,4 +1,4 @@
-#include "libs/Game.hpp"
+#include "Game.hpp"
 
 Game::Game():
     mWindow(sf::VideoMode(800,600), "Pong"),
