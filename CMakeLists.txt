@@ -4,7 +4,7 @@ message ("Current Directory: ${CMAKE_CURRENT_BINARY_DIR}")
 cmake_minimum_required (VERSION 2.8)
 
 # nome do projeto
-project (Pong)
+project (SuperTank)
 
 # Versão da aplicação
 set (MAJOR_VERSION 0)
@@ -17,7 +17,7 @@ set (VERSION \"${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION}\")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall")
 
 # nome do executável
-set (EXECUTABLE_NAME "game")
+set (EXECUTABLE_NAME "SuperTank")
 
 # Detecta e adiciona o SFML ao projeto
 set (CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
@@ -42,7 +42,7 @@ include_directories (
 
 add_subdirectory (include)
 
-add_executable (${EXECUTABLE_NAME} main.cpp Game.cpp Ball.cpp Rectangle.cpp)
+add_executable (${EXECUTABLE_NAME} main.cpp Game.cpp Tank.cpp)
 
 target_link_libraries (${EXECUTABLE_NAME} ${SFML_LIBRARIES})
 
