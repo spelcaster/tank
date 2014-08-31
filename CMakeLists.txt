@@ -4,13 +4,17 @@ message ("Current Directory: ${CMAKE_CURRENT_BINARY_DIR}")
 cmake_minimum_required (VERSION 2.8)
 
 # nome do projeto
-project (MajorTank)
+project (Pong)
 
 # Versão da aplicação
 set (MAJOR_VERSION 0)
 set (MINOR_VERSION 1)
 set (PATCH_VERSION 0)
 set (VERSION \"${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION}\")
+
+# set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall")
+
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall")
 
 # nome do executável
 set (EXECUTABLE_NAME "game")
@@ -38,7 +42,7 @@ include_directories (
 
 add_subdirectory (include)
 
-add_executable (${EXECUTABLE_NAME} main.cpp Game.cpp)
+add_executable (${EXECUTABLE_NAME} main.cpp Game.cpp Ball.cpp Rectangle.cpp)
 
 target_link_libraries (${EXECUTABLE_NAME} ${SFML_LIBRARIES})
 

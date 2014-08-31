@@ -1,5 +1,5 @@
 #include "include/config.h"
-#include "Game.hpp"
+#include "include/Game.hpp"
 #include <iostream>
 
 using namespace std;
