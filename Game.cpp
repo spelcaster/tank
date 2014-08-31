@@ -1,10 +1,9 @@
-#include "include/Game.hpp"
+#include "Game.hpp"
+#include "Tank.hpp"
 
 Game::Game():
-    mWindow(sf::VideoMode(1600,900), "Pong"),
-    mBall(),
-    mPlayerOne(30.f, 375.f, sf::Keyboard::W, sf::Keyboard::S),
-    mPlayerTwo(1520.f, 375.f, sf::Keyboard::Numpad8, sf::Keyboard::Numpad2)
+    mWindow(sf::VideoMode(800,600), "Super Tank"),
+    _player_one()
 {
 }
 
@@ -41,13 +40,10 @@ void Game::proccessEvents()
     while (mWindow.pollEvent(event)) {
 
         switch (event.type) {
+            // Tratamento de input
             case sf::Event::KeyPressed:
-                mPlayerOne.handleInput(event.key.code, true);
-                mPlayerTwo.handleInput(event.key.code, true);
                 break;
             case sf::Event::KeyReleased:
-                mPlayerOne.handleInput(event.key.code, false);
-                mPlayerTwo.handleInput(event.key.code, false);
                 break;
             case sf::Event::Closed:
                 mWindow.close();
@@ -59,18 +55,11 @@ void Game::proccessEvents()
 
 void Game::update(sf::Time timePerFrame)
 {
-    bool changeDirection = mBall.getGlobalBounds().intersects(mPlayerOne.getGlobalBounds()) ||
-        mBall.getGlobalBounds().intersects(mPlayerTwo.getGlobalBounds()) ;
-    mPlayerOne.update(timePerFrame, mWindow.getSize().y);
-    mPlayerTwo.update(timePerFrame, mWindow.getSize().y);
-    mBall.update(timePerFrame, mWindow.getSize().y, changeDirection);
 }
 
 void Game::render()
 {
     mWindow.clear();
-    mWindow.draw(mBall);
-    mWindow.draw(mPlayerOne);
-    mWindow.draw(mPlayerTwo);
+    mWindow.draw(_player_one);
     mWindow.display();
 }
