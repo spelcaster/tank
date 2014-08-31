@@ -42,8 +42,10 @@ void Game::proccessEvents()
         switch (event.type) {
             // Tratamento de input
             case sf::Event::KeyPressed:
+                _player_one.handleInput(event.key.code, true);
                 break;
             case sf::Event::KeyReleased:
+                _player_one.handleInput(event.key.code, false);
                 break;
             case sf::Event::Closed:
                 mWindow.close();
@@ -58,6 +60,7 @@ void Game::proccessEvents()
 
 void Game::update(sf::Time timePerFrame)
 {
+  _player_one.update();
 }
 
 void Game::render()
