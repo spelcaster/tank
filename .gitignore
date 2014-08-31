@@ -1,1 +1,5 @@
 build/
+
+# Editors files
+tags
+Session.vim
