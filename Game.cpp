@@ -48,6 +48,9 @@ void Game::proccessEvents()
             case sf::Event::Closed:
                 mWindow.close();
                 break;
+
+            default:
+                break;
         }
     }
 
